@@ -17,9 +17,9 @@ public class LightningTest {
     }
 
     @Test
-    public void canCast() {
+    public void canBeCast() {
         lightning.cast(orc);
-        assertEquals(5, orc.getHealth());
+        assertEquals(-85, orc.getHealth());
     }
 
 }
