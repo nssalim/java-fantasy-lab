@@ -1,12 +1,18 @@
 package players;
 
+import weapons.IWeapon;
+
+import java.util.ArrayList;
+
 public abstract class Player {
     private String name;
     private int health;
+    ArrayList<IWeapon> weapons;
 
     public Player(String name, int health) {
         this.name = name;
         this.health = health;
+        this.weapons = new ArrayList<>();
     }
 
     public String getName() {
@@ -23,5 +29,13 @@ public abstract class Player {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public ArrayList<IWeapon> getWeapons() {
+        return this.weapons;
+    }
+
+    public void addWeapon(IWeapon weapon) {
+        this.weapons.add(weapon);
     }
 }
