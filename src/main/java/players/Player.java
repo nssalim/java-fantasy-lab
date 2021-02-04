@@ -1,5 +1,6 @@
 package players;
 
+import enemies.Enemy;
 import weapons.IWeapon;
 
 import java.util.ArrayList;
@@ -37,5 +38,14 @@ public abstract class Player {
 
     public void addWeapon(IWeapon weapon) {
         this.weapons.add(weapon);
+    }
+
+    public IWeapon getWeapon(IWeapon weapon){
+        int weaponIndex = this.weapons.indexOf(weapon);
+        return this.weapons.get(weaponIndex);
+    }
+
+    public void attackEnemy(Enemy enemy, IWeapon weapon){
+        weapon.attack(enemy);
     }
 }
